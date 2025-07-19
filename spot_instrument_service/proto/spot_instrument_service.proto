@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package spot_instrument_service_proto;
 
-option go_package = "github.com/FlyKarlik/proto/proto/spot_instrument_service/gen;spot_instrument_service_proto";
+option go_package = "github.com/Megahhearz/proto/proto/spot_instrument_service/gen;spot_instrument_service_proto";
 
 import "google/protobuf/timestamp.proto";
 
