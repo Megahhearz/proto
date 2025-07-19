@@ -1,4 +1,4 @@
-module github.com/FlyKarlik/proto
+module github.com/Megahhearz/proto
 
 go 1.24.2
 
