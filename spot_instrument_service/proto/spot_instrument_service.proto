@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package spot_instrument_service_proto;
+
+option go_package = "github.com/FlyKarlik/proto/proto/spot_instrument_service/gen;spot_instrument_service_proto";
+
+import "google/protobuf/timestamp.proto";
+
+enum UserRole {
+  USER_ROLE_UNSPECIFIED = 0;
+  USER_ROLE_TRADER = 1;
+  USER_ROLE_ADMIN = 2;
+  USER_ROLE_VIEWER = 3;
+}
+
+message Market {
+  string id = 1;
+  string name = 2;
+  bool enabled = 3;
+  optional google.protobuf.Timestamp deleted_at = 4;
+  repeated UserRole allowed_roles = 5;
+}
+
+message ViewMarketsRequest {
+  repeated UserRole user_roles = 1;
+}
+
+message ViewMarketsResponse {
+  repeated Market markets = 1;
+}
+
+service SpotInstrumentService {
+  rpc ViewMarkets(ViewMarketsRequest) returns (ViewMarketsResponse);
+}
