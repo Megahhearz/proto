@@ -1,8 +1,10 @@
+//version 1.0.0
+
 syntax = "proto3";
 
 package spot_instrument_service_proto;
 
-option go_package = "github.com/Megahhearz/proto/proto/spot_instrument_service/gen;spot_instrument_service_proto";
+option go_package = "github.com/Megahhearz/proto/proto/spot_instrument_service/gen/v1;spot_instrument_service_proto";
 
 import "google/protobuf/timestamp.proto";
 
