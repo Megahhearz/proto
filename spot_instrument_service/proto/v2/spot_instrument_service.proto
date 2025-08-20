@@ -1,0 +1,31 @@
+//version 2.0.0
+
+syntax = "proto3";
+
+package spot_instrument_service_proto;
+
+option go_package = "github.com/Megahhearz/proto/proto/spot_instrument_service/gen/v2;spot_instrument_service_proto";
+
+import "google/protobuf/timestamp.proto";
+
+
+
+message Market {
+  string id = 1;
+  string name = 2;
+  bool enabled = 3;
+  optional google.protobuf.Timestamp deleted_at = 4;
+  repeated user_role_proto.UserRole allowed_roles = 5;
+}
+
+message ViewMarketsRequest {
+  repeated user_role_proto.UserRole user_roles = 1;
+}
+
+message ViewMarketsResponse {
+  repeated Market markets = 1;
+}
+
+service SpotInstrumentService {
+  rpc ViewMarkets(ViewMarketsRequest) returns (ViewMarketsResponse);
+}

@@ -1,0 +1,13 @@
+//version 1.0.0
+syntax = "proto3";
+
+package user_role_proto;
+
+option go_package = "github.com/Megahhearz/proto/proto/shared_proto/gen/v2;common_proto";
+
+enum UserRole {
+  USER_ROLE_UNSPECIFIED = 0;
+  USER_ROLE_TRADER = 1;
+  USER_ROLE_ADMIN = 2;
+  USER_ROLE_VIEWER = 3;
+}

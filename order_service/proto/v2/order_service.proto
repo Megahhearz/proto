@@ -1,0 +1,66 @@
+//version 2.0.0
+
+syntax = "proto3";
+
+package order_service_proto;
+
+option go_package = "github.com/Megahhearz/proto/proto/order_service/gen/v2;order_service_proto";
+
+import "google/protobuf/timestamp.proto";
+
+enum OrderType {
+  ORDER_TYPE_UNSPECIFIED = 0;
+  LIMIT = 1;
+  MARKET = 2;
+}
+
+enum OrderStatus {
+  ORDER_STATUS_UNSPECIFIED = 0;
+  CREATED = 1;
+  PENDING = 2;
+  FILLED = 3;
+  REJECTED = 4;
+}
+
+message CreateOrderRequest {
+  string user_id = 1;
+  string market_id = 2;
+  OrderType order_type = 3;
+  double price = 4;
+  int64 quantity = 5;
+  repeated user_role_proto.UserRole user_roles = 6;
+}
+
+message CreateOrderResponse {
+  string order_id = 1;
+  OrderStatus status = 2;
+}
+
+message GetOrderStatusRequest {
+  string order_id = 1;
+  string user_id = 2;
+}
+
+message GetOrderStatusResponse {
+  OrderStatus status = 1;
+}
+
+message OrderUpdate {
+  string order_id = 1;
+  OrderStatus status = 2;
+  google.protobuf.Timestamp updated_at = 3;
+}
+
+message StreamOrderUpdatesRequest {
+  string order_id = 1;
+  string user_id = 2;
+}
+
+service OrderSyncService {
+  rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse);
+  rpc GetOrderStatus(GetOrderStatusRequest) returns (GetOrderStatusResponse);
+}
+
+service OrderStreamService {
+  rpc StreamOrderUpdates(StreamOrderUpdatesRequest) returns (stream OrderUpdate);
+}
