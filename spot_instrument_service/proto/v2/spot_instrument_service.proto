@@ -7,6 +7,7 @@ package spot_instrument_service_proto;
 option go_package = "github.com/Megahhearz/proto/proto/spot_instrument_service/gen/v2;spot_instrument_service_proto";
 
 import "google/protobuf/timestamp.proto";
+import "shared_proto/proto/v2/user_role.proto";
 
 
 
@@ -24,6 +25,10 @@ message ViewMarketsRequest {
 
 message ViewMarketsResponse {
   repeated Market markets = 1;
+  int32 total_count = 2;
+  int32 page = 3;
+  int32 page_size = 4;
+  int32 total_pages = 5;
 }
 
 service SpotInstrumentService {
