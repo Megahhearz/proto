@@ -1,20 +1,18 @@
-//version 2.0.0
+//version 2.0.1
 
 syntax = "proto3";
 
 package spot_instrument_service_proto;
 
-option go_package = "github.com/Megahhearz/proto/proto/spot_instrument_service/gen/v2;spot_instrument_service_proto";
+option go_package = "github.com/Megahhearz/proto/spot_instrument_service;spot_instrument_service_proto";
 
 import "google/protobuf/timestamp.proto";
 import "shared_proto/proto/v2/user_role.proto";
 
-
-
 message Market {
   string id = 1;
   string name = 2;
-  bool enabled = 3;
+  optional bool enabled = 3; // Добавлено optional для согласованности с domain.Market
   optional google.protobuf.Timestamp deleted_at = 4;
   repeated user_role_proto.UserRole allowed_roles = 5;
 }

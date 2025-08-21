@@ -4,9 +4,9 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v6.30.1
-// source: shared_proto/v2/user_role.proto
+// source: shared_proto/proto/v2/user_role.proto
 
-package common_proto
+package user_role
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -59,11 +59,11 @@ func (x UserRole) String() string {
 }
 
 func (UserRole) Descriptor() protoreflect.EnumDescriptor {
-	return file_shared_proto_v2_user_role_proto_enumTypes[0].Descriptor()
+	return file_shared_proto_proto_v2_user_role_proto_enumTypes[0].Descriptor()
 }
 
 func (UserRole) Type() protoreflect.EnumType {
-	return &file_shared_proto_v2_user_role_proto_enumTypes[0]
+	return &file_shared_proto_proto_v2_user_role_proto_enumTypes[0]
 }
 
 func (x UserRole) Number() protoreflect.EnumNumber {
@@ -72,37 +72,37 @@ func (x UserRole) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use UserRole.Descriptor instead.
 func (UserRole) EnumDescriptor() ([]byte, []int) {
-	return file_shared_proto_v2_user_role_proto_rawDescGZIP(), []int{0}
+	return file_shared_proto_proto_v2_user_role_proto_rawDescGZIP(), []int{0}
 }
 
-var File_shared_proto_v2_user_role_proto protoreflect.FileDescriptor
+var File_shared_proto_proto_v2_user_role_proto protoreflect.FileDescriptor
 
-const file_shared_proto_v2_user_role_proto_rawDesc = "" +
+const file_shared_proto_proto_v2_user_role_proto_rawDesc = "" +
 	"\n" +
-	"\x1fshared_proto/v2/user_role.proto\x12\x0fuser_role_proto*f\n" +
+	"%shared_proto/proto/v2/user_role.proto\x12\x0fuser_role_proto*f\n" +
 	"\bUserRole\x12\x19\n" +
 	"\x15USER_ROLE_UNSPECIFIED\x10\x00\x12\x14\n" +
 	"\x10USER_ROLE_TRADER\x10\x01\x12\x13\n" +
 	"\x0fUSER_ROLE_ADMIN\x10\x02\x12\x14\n" +
-	"\x10USER_ROLE_VIEWER\x10\x03BDZBgithub.com/Megahhearz/proto/proto/shared_proto/gen/v2;common_protob\x06proto3"
+	"\x10USER_ROLE_VIEWER\x10\x03B4Z2github.com/Megahhearz/proto/shared_proto;user_roleb\x06proto3"
 
 var (
-	file_shared_proto_v2_user_role_proto_rawDescOnce sync.Once
-	file_shared_proto_v2_user_role_proto_rawDescData []byte
+	file_shared_proto_proto_v2_user_role_proto_rawDescOnce sync.Once
+	file_shared_proto_proto_v2_user_role_proto_rawDescData []byte
 )
 
-func file_shared_proto_v2_user_role_proto_rawDescGZIP() []byte {
-	file_shared_proto_v2_user_role_proto_rawDescOnce.Do(func() {
-		file_shared_proto_v2_user_role_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_shared_proto_v2_user_role_proto_rawDesc), len(file_shared_proto_v2_user_role_proto_rawDesc)))
+func file_shared_proto_proto_v2_user_role_proto_rawDescGZIP() []byte {
+	file_shared_proto_proto_v2_user_role_proto_rawDescOnce.Do(func() {
+		file_shared_proto_proto_v2_user_role_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_shared_proto_proto_v2_user_role_proto_rawDesc), len(file_shared_proto_proto_v2_user_role_proto_rawDesc)))
 	})
-	return file_shared_proto_v2_user_role_proto_rawDescData
+	return file_shared_proto_proto_v2_user_role_proto_rawDescData
 }
 
-var file_shared_proto_v2_user_role_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_shared_proto_v2_user_role_proto_goTypes = []any{
+var file_shared_proto_proto_v2_user_role_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_shared_proto_proto_v2_user_role_proto_goTypes = []any{
 	(UserRole)(0), // 0: user_role_proto.UserRole
 }
-var file_shared_proto_v2_user_role_proto_depIdxs = []int32{
+var file_shared_proto_proto_v2_user_role_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -110,26 +110,26 @@ var file_shared_proto_v2_user_role_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_shared_proto_v2_user_role_proto_init() }
-func file_shared_proto_v2_user_role_proto_init() {
-	if File_shared_proto_v2_user_role_proto != nil {
+func init() { file_shared_proto_proto_v2_user_role_proto_init() }
+func file_shared_proto_proto_v2_user_role_proto_init() {
+	if File_shared_proto_proto_v2_user_role_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_shared_proto_v2_user_role_proto_rawDesc), len(file_shared_proto_v2_user_role_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_shared_proto_proto_v2_user_role_proto_rawDesc), len(file_shared_proto_proto_v2_user_role_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   0,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_shared_proto_v2_user_role_proto_goTypes,
-		DependencyIndexes: file_shared_proto_v2_user_role_proto_depIdxs,
-		EnumInfos:         file_shared_proto_v2_user_role_proto_enumTypes,
+		GoTypes:           file_shared_proto_proto_v2_user_role_proto_goTypes,
+		DependencyIndexes: file_shared_proto_proto_v2_user_role_proto_depIdxs,
+		EnumInfos:         file_shared_proto_proto_v2_user_role_proto_enumTypes,
 	}.Build()
-	File_shared_proto_v2_user_role_proto = out.File
-	file_shared_proto_v2_user_role_proto_goTypes = nil
-	file_shared_proto_v2_user_role_proto_depIdxs = nil
+	File_shared_proto_proto_v2_user_role_proto = out.File
+	file_shared_proto_proto_v2_user_role_proto_goTypes = nil
+	file_shared_proto_proto_v2_user_role_proto_depIdxs = nil
 }

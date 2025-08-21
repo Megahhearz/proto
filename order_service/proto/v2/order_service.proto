@@ -4,10 +4,11 @@ syntax = "proto3";
 
 package order_service_proto;
 
-option go_package = "github.com/Megahhearz/proto/proto/order_service/gen/v2;order_service_proto";
+option go_package = "github.com/Megahhearz/proto/order_service/gen/v2/proto;order_service_proto";
 
 import "google/protobuf/timestamp.proto";
 import "shared_proto/proto/v2/user_role.proto";
+
 
 enum OrderType {
   ORDER_TYPE_UNSPECIFIED = 0;
