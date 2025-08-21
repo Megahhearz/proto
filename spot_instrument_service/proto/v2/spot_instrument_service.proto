@@ -12,7 +12,7 @@ import "shared_proto/proto/v2/user_role.proto";
 message Market {
   string id = 1;
   string name = 2;
-  optional bool enabled = 3; // Добавлено optional для согласованности с domain.Market
+  bool enabled = 3;
   optional google.protobuf.Timestamp deleted_at = 4;
   repeated user_role_proto.UserRole allowed_roles = 5;
 }
