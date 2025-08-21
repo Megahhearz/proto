@@ -6,7 +6,7 @@ spot:
 	protoc \
 	  --go_out=spot_instrument_service --go_opt=paths=source_relative \
 	  --go-grpc_out=spot_instrument_service --go-grpc_opt=paths=source_relative \
-	  spot_instrument_service/proto/v1/spot_instrument_service.proto
+	  spot_instrument_service/proto/v2/spot_instrument_service.proto
 
 order:
 	protoc \

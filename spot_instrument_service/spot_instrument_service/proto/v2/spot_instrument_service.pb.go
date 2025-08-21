@@ -30,7 +30,7 @@ type Market struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
 	Id            string                  `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                  `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Enabled       *bool                   `protobuf:"varint,3,opt,name=enabled,proto3,oneof" json:"enabled,omitempty"` // Добавлено optional для согласованности с domain.Market
+	Enabled       bool                    `protobuf:"varint,3,opt,name=enabled,proto3" json:"enabled,omitempty"`
 	DeletedAt     *timestamppb.Timestamp  `protobuf:"bytes,4,opt,name=deleted_at,json=deletedAt,proto3,oneof" json:"deleted_at,omitempty"`
 	AllowedRoles  []shared_proto.UserRole `protobuf:"varint,5,rep,packed,name=allowed_roles,json=allowedRoles,proto3,enum=user_role_proto.UserRole" json:"allowed_roles,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -82,8 +82,8 @@ func (x *Market) GetName() string {
 }
 
 func (x *Market) GetEnabled() bool {
-	if x != nil && x.Enabled != nil {
-		return *x.Enabled
+	if x != nil {
+		return x.Enabled
 	}
 	return false
 }
@@ -226,16 +226,14 @@ var File_spot_instrument_service_proto_v2_spot_instrument_service_proto protoref
 
 const file_spot_instrument_service_proto_v2_spot_instrument_service_proto_rawDesc = "" +
 	"\n" +
-	">spot_instrument_service/proto/v2/spot_instrument_service.proto\x12\x1dspot_instrument_service_proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%shared_proto/proto/v2/user_role.proto\"\xe6\x01\n" +
+	">spot_instrument_service/proto/v2/spot_instrument_service.proto\x12\x1dspot_instrument_service_proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%shared_proto/proto/v2/user_role.proto\"\xd5\x01\n" +
 	"\x06Market\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1d\n" +
-	"\aenabled\x18\x03 \x01(\bH\x00R\aenabled\x88\x01\x01\x12>\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n" +
+	"\aenabled\x18\x03 \x01(\bR\aenabled\x12>\n" +
 	"\n" +
-	"deleted_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampH\x01R\tdeletedAt\x88\x01\x01\x12>\n" +
-	"\rallowed_roles\x18\x05 \x03(\x0e2\x19.user_role_proto.UserRoleR\fallowedRolesB\n" +
-	"\n" +
-	"\b_enabledB\r\n" +
+	"deleted_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampH\x00R\tdeletedAt\x88\x01\x01\x12>\n" +
+	"\rallowed_roles\x18\x05 \x03(\x0e2\x19.user_role_proto.UserRoleR\fallowedRolesB\r\n" +
 	"\v_deleted_at\"N\n" +
 	"\x12ViewMarketsRequest\x128\n" +
 	"\n" +
